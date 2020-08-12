@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="4dp"
+    app:cardCornerRadius="4dp"
+    app:contentPadding="13dp"
+    app:cardUseCompatPadding="true"
+    android:layout_width="match_parent"
+    android:layout_margin="4dp"
+    android:layout_height="wrap_content">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="ID :"
+            android:textColor="@color/colorBlack"
+            android:textSize="24sp"
+            android:id="@+id/labelID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            app:layout_constraintStart_toEndOf="@id/labelID"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="8dp"
+            android:text="-"
+            android:textSize="24sp"
+            android:id="@+id/tvID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            app:layout_constraintTop_toBottomOf="@id/labelID"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="Name :"
+            android:textColor="@color/colorBlack"
+            android:layout_marginTop="10dp"
+            android:textSize="24sp"
+            android:id="@+id/labelNama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            app:layout_constraintStart_toEndOf="@id/labelNama"
+            app:layout_constraintTop_toTopOf="@id/labelNama"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/labelNama"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/board"
+            android:hint="name"
+            android:padding="5dp"
+            android:textSize="24sp"
+            android:id="@+id/etNama"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            app:layout_constraintTop_toBottomOf="@id/labelNama"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="Quantity :"
+            android:textColor="@color/colorBlack"
+            android:layout_marginTop="15dp"
+            android:textSize="24sp"
+            android:id="@+id/labelQty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            app:layout_constraintStart_toEndOf="@id/labelQty"
+            app:layout_constraintTop_toTopOf="@id/labelQty"
+            app:layout_constraintBottom_toBottomOf="@id/labelQty"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/board"
+            android:hint="Quantity"
+            android:padding="5dp"
+            android:textSize="24sp"
+            android:id="@+id/tvQty"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            app:layout_constraintTop_toBottomOf="@id/labelQty"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="Unit :"
+            android:textColor="@color/colorBlack"
+            android:layout_marginTop="15dp"
+            android:textSize="24sp"
+            android:id="@+id/labelUnit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            app:layout_constraintStart_toEndOf="@id/labelUnit"
+            app:layout_constraintTop_toTopOf="@id/labelUnit"
+            app:layout_constraintBottom_toBottomOf="@id/labelUnit"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/board"
+            android:hint="unit"
+            android:padding="5dp"
+            android:textSize="24sp"
+            android:id="@+id/tvUnit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            app:layout_constraintTop_toBottomOf="@id/labelUnit"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="Unit Price :"
+            android:textColor="@color/colorBlack"
+            android:layout_marginTop="15dp"
+            android:textSize="24sp"
+            android:id="@+id/labelUnitPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            app:layout_constraintStart_toEndOf="@id/labelUnitPrice"
+            app:layout_constraintTop_toTopOf="@id/labelUnitPrice"
+            app:layout_constraintBottom_toBottomOf="@id/labelUnitPrice"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/board"
+            android:hint="unit price"
+            android:padding="5dp"
+            android:textSize="24sp"
+            android:id="@+id/tvUnitPrice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            app:layout_constraintTop_toBottomOf="@id/labelUnitPrice"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="Total Price : Rp. "
+            android:textColor="@color/colorBlack"
+            android:layout_marginTop="15dp"
+            android:textSize="24sp"
+            android:id="@+id/labelTotalPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            app:layout_constraintStart_toEndOf="@id/labelTotalPrice"
+            app:layout_constraintTop_toTopOf="@id/labelTotalPrice"
+            app:layout_constraintBottom_toBottomOf="@id/labelTotalPrice"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/board"
+            android:hint="total"
+            android:padding="5dp"
+            android:textSize="24sp"
+            android:id="@+id/tvTotalPrice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+        <CheckBox
+            android:id="@+id/cb"
+            android:layout_marginTop="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Bought"
+            android:textSize="24sp"
+            app:layout_constraintTop_toBottomOf="@id/labelTotalPrice"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_delete_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
