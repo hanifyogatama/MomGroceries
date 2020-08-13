@@ -9,15 +9,15 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
-    private var mDb: GroceriesDatabase? = null
+    private lateinit var db : GroceriesDatabase
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        mDb = GroceriesDatabase.getInstance(this)
-
-        recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        GroceriesDatabase.getInstance(this)?.let{
+            db = it
+        }
 
         fabAdd.setOnClickListener {
             val toAddActivity = Intent(this, AddActivity::class.java)
@@ -33,11 +33,13 @@ class MainActivity : AppCompatActivity() {
 
     fun fetchData(){
         GlobalScope.launch {
-            val listItem = mDb?.groceriesDao()?.readAllItem()
+            val listItem = db?.groceriesDao()?.readAllItem()
 
             runOnUiThread{
                 listItem?.let{
                     val adapter = GroceriesAdapter(it)
+                    val layoutManager= LinearLayoutManager(this@MainActivity,LinearLayoutManager.VERTICAL,false)
+                    recyclerView.layoutManager =layoutManager
                     recyclerView.adapter= adapter
                 }
             }

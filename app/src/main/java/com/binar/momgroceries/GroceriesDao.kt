@@ -8,14 +8,14 @@ import androidx.room.OnConflictStrategy.REPLACE
 interface GroceriesDao {
 
     @Insert(onConflict = REPLACE)
-    fun addItem(item: Groceries): Long
+    fun addItem(groceries: Groceries): Long
 
     @Query("SELECT * FROM Groceries")
     fun readAllItem(): List<Groceries>
 
     @Update
-    fun updateItem(item: Groceries): Int
+    fun updateItem(groceries: Groceries): Int
 
     @Delete
-    fun deleteItem(item: Groceries): Int
+    fun deleteItem(groceries: Groceries): Int
 }

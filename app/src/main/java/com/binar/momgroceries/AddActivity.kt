@@ -9,12 +9,14 @@ import kotlinx.coroutines.launch
 
 class AddActivity : AppCompatActivity() {
 
-    var mDb: GroceriesDatabase? = null
+    private lateinit var db : GroceriesDatabase
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add)
 
-        mDb = GroceriesDatabase.getInstance(this)
+        GroceriesDatabase.getInstance(this)?.let{
+            db = it
+        }
 
         btnSave.setOnClickListener {
             val objectGroceries = Groceries(
@@ -22,12 +24,14 @@ class AddActivity : AppCompatActivity() {
                 etNameGroceries.text.toString(),
                 etQty.text.toString().toInt(),
                 etUnit.text.toString(),
-                etUnitPrice.text.toString().toInt()
+                etUnitPrice.text.toString().toInt(),
+                false
             )
+
             GlobalScope.launch {
-                val result = mDb?.groceriesDao()?.addItem(objectGroceries)
+                val result = db.groceriesDao().addItem(objectGroceries)
                 runOnUiThread{
-                    if(result!=0.toLong()){
+                    if(result > 0){
                         // success
                         Toast.makeText(this@AddActivity,"Sukses menambahkan data ${objectGroceries.name}",
                             Toast.LENGTH_LONG).show()

@@ -24,6 +24,5 @@ abstract fun groceriesDao():GroceriesDao
         fun destroyInstance() {
             INSTANCE = null
         }
-
     }
 }

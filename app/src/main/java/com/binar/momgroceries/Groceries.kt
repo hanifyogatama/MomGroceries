@@ -13,7 +13,6 @@ data class Groceries(
     @ColumnInfo(name = "name") var name: String,
     @ColumnInfo(name = "quantity") var quantity: Int,
     @ColumnInfo(name = "unit") var unit: String,
-    @ColumnInfo(name = "unitPrice") var unitPrice: Int
-    //@ColumnInfo(name = "bought") var bought : Boolean
-) : Parcelable {
-}
+    @ColumnInfo(name = "unitPrice") var unitPrice: Int,
+    @ColumnInfo(name = "isChecked") var isChecked : Boolean
+) : Parcelable
